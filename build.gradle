@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation group: "jakarta.xml.ws", name: "jakarta.xml.ws-api", version: "2.3.3"
+    implementation group: "com.sun.xml.ws", name: "jaxws-rt", version: "2.3.5"
+    compileOnly group: "jakarta.jws", name: "jakarta.jws-api", version: "2.1.0"
+
+    compileOnly group: "com.sun.xml.bind", name: "jaxb-impl", version: "2.3.5"
+
+    compileOnly group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '3.3.10'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
